@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./TransactionsTable.css"; // Import the CSS file
+import "./TransactionsTable.css";
 
 function TransactionsTable() {
   const [transactions, setTransactions] = useState([]);
@@ -47,12 +47,12 @@ function TransactionsTable() {
 
   const handleMonthChange = (e) => {
     setMonth(e.target.value);
-    setPage(1); // Reset to first page on month change
+    setPage(1); 
   };
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
-    // setPage(1); // Reset to first page on search change
+
   };
 
   const handleNextPage = () => {

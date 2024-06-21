@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Staticdata.css";
 const Staticdata = () => {
-  const [staticData, setStaticData] = useState(null); // Change to null for no data check
+  const [staticData, setStaticData] = useState(null); 
   const [month, setMonth] = useState("March");
 
   const monthNames = [
@@ -69,7 +69,6 @@ const Staticdata = () => {
           </select>
         </div>
         <div className="data-display">
-          {/* Display static data here */}
           {staticData ? (
             <ul>
               <li>Total Sales: {staticData.totalSales}</li>
