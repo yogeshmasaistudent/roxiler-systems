@@ -7,8 +7,6 @@ function TransactionsTable() {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
 
-
-
   const monthNames = [
     "January",
     "February",
@@ -32,9 +30,9 @@ function TransactionsTable() {
     try {
       const monthNumber = month ? getMonthNumber(month) : "";
       const res = await fetch(
-        `https://roxiler-systems-assigment-1.onrender.com/api/transactions?${
+        `https://roxiler-systems-egdl.onrender.com/api/transactions?${
           monthNumber ? `month=${monthNumber}&` : ""
-        }page=${page}`
+        }${search ? `search=${search}&` : ""}page=${page}`
       );
       const data = await res.json();
       setTransactions(data);
@@ -54,7 +52,7 @@ function TransactionsTable() {
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
-    setPage(1); // Reset to first page on search change
+    // setPage(1); // Reset to first page on search change
   };
 
   const handleNextPage = () => {
@@ -86,7 +84,7 @@ function TransactionsTable() {
 
         <input
           type="text"
-          placeholder="Search transactions"
+          placeholder="Search by category"
           value={search}
           onChange={handleSearchChange}
           className="search-input"
@@ -99,6 +97,8 @@ function TransactionsTable() {
             <th>Title</th>
             <th>Description</th>
             <th>Price</th>
+            <th>Category</th>
+            <th>Sold</th>
             <th>Date of Sale</th>
             <th>Image</th>
           </tr>
@@ -110,7 +110,9 @@ function TransactionsTable() {
               <td>{transaction.title}</td>
               <td>{transaction.description}</td>
               <td>{transaction.price}</td>
-              <td>{transaction.dateOfSale}</td>
+              <td>{transaction.category}</td>
+              <td>{transaction.sold ? "NO" : "Yes"}</td>
+              <td>{new Date(transaction.dateOfSale).toLocaleDateString()}</td>
               <td className="image-cover">
                 <img
                   src={transaction.image}

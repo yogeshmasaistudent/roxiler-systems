@@ -17,38 +17,8 @@ const initializeDatabase = async (req, res) => {
   }
 };
 
-// **************************************************************
 
-// List all transactions with search and pagination
-// const listTransactions = async (req, res) => {
-//   try {
-//     const { page = 1, perPage = 10, search = "", month } = req.query;
-//     const searchQuery = search
-//       ? {
-//           $or: [
-//             { title: { $regex: search, $options: "i" } },
-//             { description: { $regex: search, $options: "i" } },
-//             { price: { $regex: search, $options: "i" } },
-//           ],
-//         }
-//       : {};
-
-//     const monthQuery = month
-//       ? { $expr: { $eq: [{ $month: "$dateOfSale" }, Number(month)] } }
-//       : {};
-
-//     const query = { ...searchQuery, ...monthQuery };
-
-//     const transactions = await Transaction.find(query)
-//       .skip((page - 1) * perPage)
-//       .limit(Number(perPage));
-
-//     res.status(200).json(transactions);
-//   } catch (error) {
-//     res.status(500).json({ error: "Failed to fetch transactions" });
-//   }
-// };
-
+// Get list of Transction data 
 const listTransactions = async (req, res) => {
   try {
     const {
@@ -66,12 +36,9 @@ const listTransactions = async (req, res) => {
           $or: [
             { title: { $regex: search, $options: "i" } },
             { description: { $regex: search, $options: "i" } },
+            { category: { $regex: search, $options: "i" } },
           ],
         }
-      : {};
-
-    const categoryQuery = category
-      ? { category: { $regex: category, $options: "i" } }
       : {};
 
     const priceQuery = price ? { price: { $regex: price, $options: "i" } } : {};
@@ -80,20 +47,12 @@ const listTransactions = async (req, res) => {
       ? { $expr: { $eq: [{ $month: "$dateOfSale" }, Number(month)] } }
       : {};
 
-    // Combine all queries
-    const query = {
-      ...searchQuery,
-      ...categoryQuery,
-      ...priceQuery,
-      ...monthQuery,
-    };
+    const query = { ...searchQuery, ...priceQuery, ...monthQuery };
 
     // Fetch transactions from database with pagination
     const transactions = await Transaction.find(query)
       .skip((page - 1) * perPage)
       .limit(Number(perPage));
-
-    // Send response
     res.status(200).json(transactions);
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch transactions" });
@@ -103,10 +62,6 @@ const listTransactions = async (req, res) => {
 
 
 
-
-
-
-// ****************************************************
 
 // Get statistics for a selected month
 const getStatistics = async (req, res) => {
