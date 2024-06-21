@@ -1,0 +1,70 @@
+.chart-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background: linear-gradient(145deg, #e0eafc, #cfdef3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    transition: transform 0.3s;
+    margin-top: 50px;
+}
+
+
+.month-select-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.month-select-label {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #34495e;
+}
+
+.month-select {
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid #3498db;
+    background-color: #fff;
+    color: #3498db;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 5px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.month-select:hover,
+.month-select:focus {
+    border-color: #e74c3c;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.chart-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.chart-wrapper {
+    height: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    .chart-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .month-select {
+        width: 100%;
+        max-width: 200px;
+    }
+}

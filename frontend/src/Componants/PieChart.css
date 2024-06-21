@@ -1,0 +1,54 @@
+.pie-chart-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.pie-chart-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    /* Adjusted max-width for responsiveness */
+    height: 500px;
+    margin: auto;
+}
+
+.PieChart {
+    display: block;
+}
+
+.chart-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.select-month {
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid #3498db;
+    background-color: transparent;
+    color: #3498db;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.select-month:hover,
+.select-month:focus {
+    border-color: #e74c3c;
+}
+
+.data-list {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.data-list-item {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
