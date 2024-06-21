@@ -39,9 +39,9 @@ li {
 .controls {
     display: flex;
     justify-content: space-between;
-    /* Improved alignment */
+    align-items: center;
     margin-bottom: 20px;
-    /* Added spacing */
+    margin-top: 30px;
 }
 
 .month-select {
@@ -52,5 +52,4 @@ li {
     border-radius: 5px;
     padding: 5px 10px;
     font-size: 1rem;
-    /* Adjusted font size */
 }

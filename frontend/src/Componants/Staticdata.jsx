@@ -59,7 +59,6 @@ const Staticdata = () => {
             className="month-select"
             style={{
               backgroundColor: "#EDF6F6",
-              marginTop:"30px"
             }}
           >
             {monthNames.map((m) => (

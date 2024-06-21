@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
 .transactions-container {
     margin: 20px;
     font-family: 'Arial', sans-serif;
@@ -22,6 +27,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .month-select,
@@ -32,6 +38,7 @@
     border-radius: 5px;
     background-color: #fff;
     transition: all 0.3s ease;
+    margin-bottom: 10px;
 }
 
 .month-select:focus,
@@ -40,12 +47,17 @@
     box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
 }
 
+.transactions-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
 .transactions-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
- 
-
+    min-width: 800px;
+    /* Set a minimum width for the table */
 }
 
 .transactions-table th,
@@ -62,7 +74,7 @@
 }
 
 .transactions-table td {
-    background-color: rgba(74, 144, 266, 0.1);
+    background-color: rgba(74, 144, 226, 0.1);
 }
 
 .transaction-image {
@@ -105,16 +117,35 @@
     margin: 0 10px;
     font-weight: bold;
 }
-.transaction-image{
-    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+
+.transaction-image {
     width: 100%;
     height: auto;
-
-    
 }
 
-.image-cover{
-  border: 1px solid red;
+.image-cover {
     background-position: center;
     background-size: cover;
+}
+
+@media (max-width: 768px) {
+    .transactions-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .month-select,
+    .search-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .pagination-controls {
+        flex-direction: column;
+    }
+
+    .pagination-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }

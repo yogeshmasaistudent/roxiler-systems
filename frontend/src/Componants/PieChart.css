@@ -35,11 +35,12 @@
     margin-bottom: 20px;
     outline: none;
     transition: border-color 0.3s ease;
+    text-align: center;
 }
 
 .select-month:hover,
 .select-month:focus {
-    border-color: #e74c3c;
+box-shadow: 5px 6px 12px rgba(74, 144, 226, 0.5);
 }
 
 .data-list {

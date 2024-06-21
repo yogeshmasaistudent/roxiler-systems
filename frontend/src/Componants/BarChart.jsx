@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Bar } from "react-chartjs-2";
 import Chart from "chart.js/auto";
-import "./BarChart.css"; // Import the external CSS file
+import "./BarChart.css"; 
 
 const BarChart = () => {
-  const [selectedMonth, setSelectedMonth] = useState(3); // Default month to March
+  const [selectedMonth, setSelectedMonth] = useState(3); 
   const [barChartData, setBarChartData] = useState([]);
 
   const fetchBarChartData = async (month) => {
@@ -13,7 +13,7 @@ const BarChart = () => {
       const response = await axios.get(
         `https://roxiler-systems-assigment-1.onrender.com/api/bar-chart?month=${month}`
       );
-      console.log("API response data:", response.data); // Log the data for debugging
+      console.log("API response data:", response.data); 
       setBarChartData(response.data);
     } catch (error) {
       console.error("Error fetching bar chart data:", error);
@@ -90,7 +90,7 @@ const BarChart = () => {
   return (
     <div className="chart-container">
       <div className="month-select-container">
-        <label htmlFor="month-select" className="month-select-label">
+        <label htmlFor="month-select" className="month-select-label" style={{fontSize:"20px"}}>
           Select Month:
         </label>
         <select

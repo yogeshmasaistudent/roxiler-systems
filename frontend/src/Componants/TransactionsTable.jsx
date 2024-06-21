@@ -90,40 +90,42 @@ function TransactionsTable() {
           className="search-input"
         />
       </div>
-      <table className="transactions-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Category</th>
-            <th>Sold</th>
-            <th>Date of Sale</th>
-            <th>Image</th>
-          </tr>
-        </thead>
-        <tbody>
-          {transactions.map((transaction) => (
-            <tr key={transaction.id}>
-              <td>{transaction.id}</td>
-              <td>{transaction.title}</td>
-              <td>{transaction.description}</td>
-              <td>{transaction.price}</td>
-              <td>{transaction.category}</td>
-              <td>{transaction.sold ? "NO" : "Yes"}</td>
-              <td>{new Date(transaction.dateOfSale).toLocaleDateString()}</td>
-              <td className="image-cover">
-                <img
-                  src={transaction.image}
-                  alt={transaction.title}
-                  className="transaction-image"
-                />
-              </td>
+      <div className="transactions-table-container">
+        <table className="transactions-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Category</th>
+              <th>Sold</th>
+              <th>Date of Sale</th>
+              <th>Image</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {transactions.map((transaction) => (
+              <tr key={transaction.id}>
+                <td>{transaction.id}</td>
+                <td>{transaction.title}</td>
+                <td>{transaction.description}</td>
+                <td>{transaction.price}</td>
+                <td>{transaction.category}</td>
+                <td>{transaction.sold ? "NO" : "Yes"}</td>
+                <td>{new Date(transaction.dateOfSale).toLocaleDateString()}</td>
+                <td className="image-cover">
+                  <img
+                    src={transaction.image}
+                    alt={transaction.title}
+                    className="transaction-image"
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       <div className="pagination-controls">
         <button

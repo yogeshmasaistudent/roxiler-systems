@@ -5,8 +5,7 @@ import "./PieChart.css";
 
 const PieChart = () => {
   const [data, setData] = useState([]);
-  const [selectedMonth, setSelectedMonth] = useState(1); // Default month is January
-
+  const [selectedMonth, setSelectedMonth] = useState(1);
   useEffect(() => {
     fetchData(selectedMonth);
   }, [selectedMonth]);
@@ -52,6 +51,14 @@ const PieChart = () => {
   return (
     <div className="pie-chart-container">
       <h2 className="chart-title">Monthly Sales Breakdown</h2>
+      <label
+        htmlFor="month-select"
+        className="month-select-label"
+        style={{ fontSize: "20px" }}
+      >
+        Select Month:
+      </label>
+
       <select
         className="select-month"
         onChange={handleMonthChange}
