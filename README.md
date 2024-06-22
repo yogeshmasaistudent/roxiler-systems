@@ -13,7 +13,21 @@ This project is a MERN (MongoDB, Express, React, Node.js) stack application prov
 - **Statistical Data**: Retrieve monthly statistics (total sales, sold items, unsold items).
 - **Bar Chart Data**: Get item counts within specified price ranges.
 - **Pie Chart Data**: Fetch data for item categories and their counts.
-- **Combined API**: Consolidated JSON response for comprehensive data.
+
+
+
+## Endpoints
+
+### Root
+
+### GET /api/initialize
+- **Initialize Database**: `https://roxiler-systems-egdl.onrender.com/api/initialize`
+- **List Transactions**: `https://roxiler-systems-egdl.onrender.com/api/transactions`
+- **Statistical Data**: `https://roxiler-systems-egdl.onrender.com/api/statistics`
+- **Bar Chart Data**: `https://roxiler-systems-egdl.onrender.com/api/bar-chart`
+- **Pie Chart Data**: `https://roxiler-systems-egdl.onrender.com/api/pie-chart`
+
+
 
 ### Frontend
 
@@ -25,14 +39,14 @@ This project is a MERN (MongoDB, Express, React, Node.js) stack application prov
 
 ## Demo Video
 
-[Watch the video]()
+[Watch the video Live Presentation](https://drive.google.com/file/d/11UsB-CpEcK7_la2kPvfKHqH3sONfTaFI/view?usp=sharing)
 
 
 ### Deployed Links
 
--**Frontend Deployed Link:** (https://roxiler-systems-flame.vercel.app/)
+-**Frontend Deployed Link:** (https://roxiler-systems-assigment-y7yo.vercel.app/).
 
--**Backend Deployed Link:** (https://roxiler-systems-assigment-1.onrender.com/).
+-**Backend Deployed Link:** (https://roxiler-systems-egdl.onrender.com).
 
 
 
@@ -41,8 +55,8 @@ This project is a MERN (MongoDB, Express, React, Node.js) stack application prov
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yogeshmasaistudent/Roxiler-Systems-Assigment.git
-   cd Roxiler-Systems-Assigment;
+   git clone https://github.com/yogeshmasaistudent/roxiler-systems.git
+   cd roxiler-systems;
 
 2. **Install backend and frontend dependencies**
 
