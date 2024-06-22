@@ -13,7 +13,7 @@ const PieChart = () => {
   const fetchData = async (month) => {
     try {
       const response = await axios.get(
-        `https://roxiler-systems-assigment-1.onrender.com/api/pie-chart?month=${month}`
+        `https://roxiler-systems-egdl.onrender.com/api/pie-chart?month=${month}`
       );
       setData(response.data);
     } catch (error) {

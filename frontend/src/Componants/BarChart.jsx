@@ -11,7 +11,7 @@ const BarChart = () => {
   const fetchBarChartData = async (month) => {
     try {
       const response = await axios.get(
-        `https://roxiler-systems-assigment-1.onrender.com/api/bar-chart?month=${month}`
+        `https://roxiler-systems-egdl.onrender.com/api/bar-chart?month=${month}`
       );
       console.log("API response data:", response.data); 
       setBarChartData(response.data);
